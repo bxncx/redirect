@@ -1,0 +1,64 @@
+<!DOCTYPE html>
+<html lang="hu">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Átirányítás...</title>
+
+  <style>
+    body {
+      margin: 0;
+      padding: 0;
+      height: 100vh;
+      display: flex;
+      justify-content: center;
+      align-items: center;
+      background: #0d1117;
+      color: #ffffff;
+      font-family: "Segoe UI", sans-serif;
+      text-align: center;
+    }
+
+    .container {
+      animation: fadeIn 0.6s ease forwards;
+    }
+
+    .spinner {
+      width: 50px;
+      height: 50px;
+      border: 5px solid rgba(255, 255, 255, 0.2);
+      border-top-color: #58a6ff;
+      border-radius: 50%;
+      animation: spin 1s linear infinite;
+      margin: 0 auto 20px auto;
+    }
+
+    @keyframes spin {
+      to {
+        transform: rotate(360deg);
+      }
+    }
+
+    @keyframes fadeIn {
+      from { opacity: 0; transform: translateY(10px); }
+      to { opacity: 1; transform: translateY(0); }
+    }
+
+    .small {
+      opacity: 0.7;
+      font-size: 0.9rem;
+    }
+  </style>
+
+  <!-- Automatikus átirányítás -->
+  <meta http-equiv="refresh" content="0; URL='https://TE-APPOD.onrender.com/'" />
+</head>
+
+<body>
+  <div class="container">
+    <div class="spinner"></div>
+    <h2>Kapcsolódás a szolgáltatáshoz...</h2>
+    <p class="small">Kérlek várj egy pillanatot</p>
+  </div>
+</body>
+</html>
