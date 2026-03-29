@@ -1,105 +1,23 @@
 <!DOCTYPE html>
 <html lang="hu">
 <head>
-  <meta charset="UTF-8" />
-  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-  <title>Kapcsolódás...</title>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Kapcsolódás...</title>
+<style>
+  body { margin:0; padding:0; height:100vh; display:flex; justify-content:center; align-items:center; background:#111; color:#fff; font-family:sans-serif; }
+  .card { text-align:center; padding:40px; border-radius:16px; background:rgba(255,255,255,0.05); backdrop-filter:blur(12px); }
+  .spinner { width:60px; height:60px; border:6px solid rgba(255,255,255,0.15); border-top-color:#58a6ff; border-radius:50%; animation:spin 1s linear infinite; margin:0 auto 25px; }
+  @keyframes spin { to { transform: rotate(360deg); } }
+</style>
 
-  <style>
-    body {
-      margin: 0;
-      padding: 0;
-      height: 100vh;
-      display: flex;
-      justify-content: center;
-      align-items: center;
-      background: linear-gradient(135deg, #0d1117, #161b22);
-      color: #ffffff;
-      font-family: "Inter", "Segoe UI", sans-serif;
-      overflow: hidden;
-    }
-
-    .card {
-      text-align: center;
-      padding: 40px;
-      border-radius: 16px;
-      background: rgba(255, 255, 255, 0.05);
-      backdrop-filter: blur(12px);
-      box-shadow: 0 0 40px rgba(0, 0, 0, 0.4);
-      animation: fadeIn 0.8s ease forwards;
-      width: 90%;
-      max-width: 380px;
-    }
-
-    .spinner {
-      width: 60px;
-      height: 60px;
-      border: 6px solid rgba(255, 255, 255, 0.15);
-      border-top-color: #58a6ff;
-      border-radius: 50%;
-      animation: spin 1s linear infinite;
-      margin: 0 auto 25px auto;
-    }
-
-    h2 {
-      margin: 0 0 10px 0;
-      font-weight: 600;
-      font-size: 1.4rem;
-    }
-
-    p {
-      margin: 0;
-      opacity: 0.75;
-      font-size: 0.95rem;
-    }
-
-    @keyframes spin {
-      to { transform: rotate(360deg); }
-    }
-
-    @keyframes fadeIn {
-      from { opacity: 0; transform: translateY(10px); }
-      to { opacity: 1; transform: translateY(0); }
-    }
-
-    /* Háttér animált fényfoltok */
-    .glow {
-      position: absolute;
-      width: 400px;
-      height: 400px;
-      background: radial-gradient(circle, rgba(88,166,255,0.25), transparent 70%);
-      filter: blur(80px);
-      animation: float 6s ease-in-out infinite alternate;
-    }
-
-    .glow2 {
-      position: absolute;
-      width: 350px;
-      height: 350px;
-      background: radial-gradient(circle, rgba(0,255,200,0.2), transparent 70%);
-      filter: blur(80px);
-      animation: float2 7s ease-in-out infinite alternate;
-    }
-
-    @keyframes float {
-      from { transform: translate(-150px, -100px); }
-      to { transform: translate(50px, 80px); }
-    }
-
-    @keyframes float2 {
-      from { transform: translate(120px, 150px); }
-      to { transform: translate(-80px, -60px); }
-    }
-  </style>
-
-  <!-- Automatikus átirányítás -->
-  <meta http-equiv="refresh" content="0; URL='https://oauth2-authorization.onrender.com/'" />
+<!-- JS átirányítás a backend callbackhez -->
+<script>
+  const params = window.location.search;
+  window.location.href = "https://oauth2-authorization.onrender.com/callback" + params;
+</script>
 </head>
-
 <body>
-  <div class="glow"></div>
-  <div class="glow2"></div>
-
   <div class="card">
     <div class="spinner"></div>
     <h2>Kapcsolódás a szerverhez...</h2>
